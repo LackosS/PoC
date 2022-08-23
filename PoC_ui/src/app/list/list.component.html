@@ -1,0 +1,8 @@
+<button (click)="getAllProcesses()">List services</button>
+<mat-list>
+    <mat-list-item *ngFor="let item of processes">
+    <p>{{item.process.isrun}}</p>
+    <p>{{item.guid}}</p>
+    <p>{{item.process.port}}</p>
+    </mat-list-item>
+</mat-list>

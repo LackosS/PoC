@@ -1,0 +1,9 @@
+<button mat-fab color="primary" (click)="createTriangle(guid,width,height)" aria-label="Add triangle">
+    <mat-icon>add_circle</mat-icon>
+</button>
+
+<svg *ngIf="triangles.length>0" style="width:100%; height:100%">
+    <g>
+       <polygon *ngFor="let item of triangles" [attr.points]="generateTrianglePoints(item)" attr.fill={{item.color}} opacity="0.5" style="stroke:white;stroke-width:4;"/>
+    </g>
+</svg>
