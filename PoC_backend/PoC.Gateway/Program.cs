@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IProcessesDictionary,ProcessesDictionary>();
 var app = builder.Build();
-string targetPath = @$"C:\Users\csonkal\Desktop\PoC\PoC_backend\Versions";
+string targetPath = System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory())+@"\Versions";
 System.IO.Directory.Delete(targetPath,true);
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

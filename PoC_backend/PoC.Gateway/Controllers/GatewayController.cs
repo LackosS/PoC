@@ -60,8 +60,8 @@ public class GatewayController : Controller
     private void CreateProcess(int port)
     {
         string fileName;
-        string sourcePath = @"C:\Users\csonkal\Desktop\PoC\PoC_backend\PoC.Microservice\bin\Release";
-        string targetPath = @$"C:\Users\csonkal\Desktop\PoC\PoC_backend\Versions\{port}";
+        string sourcePath = System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory())+@"\PoC.Microservice\bin\Release";
+        string targetPath = System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory())+@$"\Versions\{port}";
         System.IO.Directory.CreateDirectory(targetPath);
         string destFile;
 
@@ -80,8 +80,8 @@ public class GatewayController : Controller
     private async Task<ActionResult<HaromszogModel>> Restart(string guid,int port, ProcessModel pr)
     {
         string fileName;
-        string sourcePath = @"C:\Users\csonkal\Desktop\PoC\PoC_backend\PoC.Microservice\bin\Release";
-        string targetPath = @$"C:\Users\csonkal\Desktop\PoC\PoC_backend\Versions\{port}";
+        string sourcePath = System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory())+@"\PoC.Microservice\bin\Release";
+        string targetPath = System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory())+@$"\Versions\{port}";
         
         System.IO.Directory.Delete(targetPath,true);
         System.IO.Directory.CreateDirectory(targetPath);
